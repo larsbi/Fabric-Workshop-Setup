@@ -12,7 +12,8 @@ Load Sample data
 ************************
 Create DimCustomer table
 ************************
-DROP TABLE [SalesLT].[DimCustomer] <br>
+```sql
+DROP TABLE [SalesLT].[DimCustomer]
 GO
 CREATE TABLE [SalesLT].[DimCustomer](
 	[CustomerID] [int] NOT NULL,
@@ -22,6 +23,7 @@ CREATE TABLE [SalesLT].[DimCustomer](
 	[SalesPerson] [nvarchar](256) NULL
 ) ON [PRIMARY]
 GO
+```
 
 insert into SalesLT.DimCustomer
 select CustomerId, FirstName, LastName, CompanyName, SalesPerson
