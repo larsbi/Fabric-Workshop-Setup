@@ -12,7 +12,7 @@ Load Sample data
 ************************
 Create DimCustomer table
 ************************
-DROP TABLE [SalesLT].[DimCustomer]
+DROP TABLE [SalesLT].[DimCustomer] <br>
 GO
 CREATE TABLE [SalesLT].[DimCustomer](
 	[CustomerID] [int] NOT NULL,
@@ -173,4 +173,4 @@ GO
 Create Lakehouse with schema in Fabric
 Make sure all required users have access to the database
 
-Upload file Customer reviews.xlsx to the root folder
+Upload file [Customer reviews.xlsx](https://github.com/larsbi/Fabric-Workshop-Setup/blob/main/Customer%20reviews.xlsx) to the root folder in Lakehouse
