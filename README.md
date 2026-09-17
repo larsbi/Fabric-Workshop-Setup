@@ -9,9 +9,7 @@ Make sure all required users have access to the database
 Load Sample data
 -> You get SalesLT schema
 
-************************
-Create DimCustomer table
-************************
+**Create DimCustomer table**
 ```sql
 DROP TABLE [SalesLT].[DimCustomer]
 GO
@@ -23,16 +21,15 @@ CREATE TABLE [SalesLT].[DimCustomer](
 	[SalesPerson] [nvarchar](256) NULL
 ) ON [PRIMARY]
 GO
-```
 
 insert into SalesLT.DimCustomer
 select CustomerId, FirstName, LastName, CompanyName, SalesPerson
 from SalesLT.Customer
 GO
+```
 
-********************
-Create DimDate table
-********************
+**Create DimDate table**
+```sql
 CREATE TABLE [SalesLT].[DimDate](
 	[DateID] [int] NOT NULL,
 	[FullDateAlternateKey] [date] NOT NULL,
@@ -85,10 +82,10 @@ BEGIN
 
 	SET @CurrentDate = DATEADD(DD, 1, @CurrentDate)
 END
+```
 
-*******************************
-Create SalesOrderHeaderDW table
-*******************************
+**Create SalesOrderHeaderDW table**
+```sql
 CREATE TABLE [SalesLT].[SalesOrderHeaderDW](
 	[SalesOrderID] [int] NOT NULL,
 	[RevisionNumber] [tinyint] NOT NULL,
@@ -140,21 +137,27 @@ WHERE CustomerID between 29848 and 30027;
 UPDATE SalesLT.SalesOrderHeaderDW
 SET StoreID = 4
 WHERE CustomerID > 30027;
+```
 
-
-**********************
-Create DimProduct View
-**********************
-CREATE VIEW [SalesLT].[DimProduct] AS select P.ProductID, P.Name, P.ProductNumber, P.StandardCost, P.ListPrice, PC.Name AS CategoryName
+**Create DimProduct View**
+```sql
+CREATE VIEW [SalesLT].[DimProduct]
+AS
+select
+P.ProductID,
+P.Name,
+P.ProductNumber,
+P.StandardCost,
+P.ListPrice,
+PC.Name AS CategoryName
 FROM SalesLT.Product P
 JOIN SalesLT.ProductCategory PC
 ON P.ProductCategoryID = PC.ProductCategoryID
 GO
+```
 
-
-*********************
-Create FactSales View
-*********************
+**Create FactSales View**
+```sql
 CREATE VIEW [SalesLT].[FactSales] 
 AS 
 select 
@@ -170,6 +173,7 @@ ON SOH.SalesOrderID = SOD.SalesOrderID
 group by SOH.OrderDate, SOH.CustomerID, SOH.StoreID,
 SOD.OrderQty, SOD.ProductID
 GO
+```
 
 **Fabric Lakehouse**
 Create Lakehouse with schema in Fabric
