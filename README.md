@@ -1,3 +1,4 @@
+# Fabric Workshop Setup instructions #
 This is the instructions to setup Fabric environment for this workshop https://github.com/larsbi/DynUG-Fabric-Workshop-V2.
 
 It requires to create a <a href="https://github.com/larsbi/Fabric-Workshop-Setup/edit/main/README.md#fabric-lakehouse">Fabric Lakehouse</a> and a <a href="https://github.com/larsbi/Fabric-Workshop-Setup/edit/main/README.md#fabric-sql-database">Fabric SQL database</a>.
