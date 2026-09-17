@@ -1,8 +1,15 @@
 This is the instructions to setup Fabric environment for this workshop https://github.com/larsbi/DynUG-Fabric-Workshop-V2.
 
-It requires to create a Fabric SQL database and a Fabric Lakehouse
+It requires to create a <a href="https://github.com/larsbi/Fabric-Workshop-Setup/edit/main/README.md#fabric-lakehouse">Fabric Lakehouse</a> and a <a href="https://github.com/larsbi/Fabric-Workshop-Setup/edit/main/README.md#fabric-sql-database">Fabric SQL database</a>.
 
-**Fabric SQL database**
+## Fabric Lakehouse ##
+Create Lakehouse with schema in Fabric
+Make sure all required users have access to the database
+
+Upload file [Customer reviews.xlsx](https://github.com/larsbi/Fabric-Workshop-Setup/blob/main/Customer%20reviews.xlsx) to the root folder in Lakehouse
+
+
+## Fabric SQL database ##
 Create SQL Database in Fabric
 Make sure all required users have access to the database
 
@@ -174,9 +181,3 @@ group by SOH.OrderDate, SOH.CustomerID, SOH.StoreID,
 SOD.OrderQty, SOD.ProductID
 GO
 ```
-
-**Fabric Lakehouse**
-Create Lakehouse with schema in Fabric
-Make sure all required users have access to the database
-
-Upload file [Customer reviews.xlsx](https://github.com/larsbi/Fabric-Workshop-Setup/blob/main/Customer%20reviews.xlsx) to the root folder in Lakehouse
